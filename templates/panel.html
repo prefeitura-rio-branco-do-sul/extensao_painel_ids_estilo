@@ -1,0 +1,65 @@
+<!-- ============================================================= -->
+<!-- Template Estrutural do Painel RBS (Prefeitura de Rio Branco do Sul) -->
+<!-- ============================================================= -->
+
+<!-- Cabeçalho Superior -->
+<header class="top-bar">
+    <div class="logo-prefeitura">
+        <img id="rbs-logo-pref" src="{{LOGO_PREFEITURA}}" alt="Prefeitura de Rio Branco do Sul">
+    </div>
+    
+    <h1 class="unit-title" id="rbs-unit-title"></h1>
+    
+    <div class="header-right">
+        <div class="date-time">
+            <div class="date-info">
+                <span class="day-of-week" id="rbs-day-of-week"></span>
+                <span class="full-date" id="rbs-full-date"></span>
+            </div>
+            <div class="clock" id="rbs-clock" aria-label="Hora local"></div>
+        </div>
+        <div class="logo-ids">
+            <img id="rbs-logo-ids" src="{{LOGO_IDS}}" alt="IDS Logo">
+        </div>
+    </div>
+</header>
+
+<!-- Conteúdo Principal -->
+<main class="main-container" id="rbs-main-container">
+    <!-- Apresentação de Chamada (Destaque quando chamado) -->
+    <section class="call-presentation" id="rbs-call-presentation" aria-live="assertive" aria-atomic="true">
+        <div class="calling-status">CHAMANDO AGORA</div>
+        <h2 class="calling-name" id="rbs-calling-name"></h2>
+        <div class="calling-destination">
+            <span class="destination-label">DESTINO</span>
+            <span class="calling-location" id="rbs-calling-location"></span>
+            <span class="destination-arrow" aria-hidden="true">→</span>
+        </div>
+        <div class="calling-ticket" id="rbs-calling-ticket"></div>
+    </section>
+
+    <!-- Card de Notícias (Esquerda) -->
+    <section class="news-card">
+        <div class="news-image-container">
+            <img id="news-image" class="news-bg-image" src="" alt="Notícia da Prefeitura">
+            <div class="tag-noticias">NOTÍCIAS DA PREFEITURA</div>
+            <div class="carousel-dots" id="carousel-dots" aria-label="Navegação de notícias"></div>
+        </div>
+        <div class="news-content">
+            <h2 id="news-title">Carregando notícias da prefeitura...</h2>
+            <p id="news-subtitle"></p>
+            <a class="news-link">Saiba mais em riobrancodosul.pr.gov.br</a>
+        </div>
+        <div class="news-progress">
+            <span class="news-progress-indicator" id="rbs-progress-indicator"></span>
+        </div>
+    </section>
+
+    <!-- Lista de Chamadas (Direita) -->
+    <section class="calls-card">
+        <h2 class="calls-title">ÚLTIMAS CHAMADAS</h2>
+        <ul class="calls-list" id="rbs-calls-list"></ul>
+    </section>
+</main>
+
+<footer class="bottom-bar"></footer>

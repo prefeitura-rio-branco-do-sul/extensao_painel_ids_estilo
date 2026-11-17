@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Estilo Painel IDS Saúde - Rio Branco do Sul",
+  "version": "1.3",
+  "description": "Customiza o estilo visual do painel eletrônico IDS Saúde com o tema da Prefeitura de Rio Branco do Sul.",
+  "update_url": "https://raw.githubusercontent.com/prefeitura-rio-branco-do-sul/extensao_painel_ids_estilo/main/updates.xml",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://riobrancodosul-saude.ids.inf.br/riobrancodosul/painel/idspaiele.dll*",
+        "http://riobrancodosul-saude.ids.inf.br/riobrancodosul/painel/idspaiele.dll*",
+        "*://*/*idspaiele.dll*",
+        "file://*/*"
+      ],
+      "css": [
+        "assets/css/layout.css",
+        "assets/css/header.css",
+        "assets/css/calls.css",
+        "assets/css/news.css",
+        "assets/css/responsive.css"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://api.rss2json.com/*",
+    "https://riobrancodosul-saude.ids.inf.br/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "assets/images/*",
+        "assets/css/*",
+        "templates/*",
+        "templates/panel.html",
+        "src/*",
+        "src/config/*",
+        "src/utils/*",
+        "src/services/*",
+        "src/components/*",
+        "src/core/*",
+        "dist/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

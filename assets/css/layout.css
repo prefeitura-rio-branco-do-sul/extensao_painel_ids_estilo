@@ -1,0 +1,66 @@
+/* ============================================================= */
+/* Layout Base e Estrutura Geral do Painel RBS                   */
+/* ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Oculta canvas estáticos do UniGUI apenas no modo painel */
+body.rbs-active canvas {
+    display: none !important;
+}
+
+/* Mantém o contêiner do UniGUI ativo em background com opacidade zero
+   para preservar o cálculo de layout e eventos AJAX do ExtJS sem erro */
+body.rbs-active #O95_id {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Estrutura Principal do Painel RBS (Overlay tela cheia) */
+#rbs-painel-app {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 2147483647 !important;
+    background-color: #edf3ef !important;
+    color: #142a1e !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    font-family: 'Rubik', sans-serif !important;
+}
+
+#rbs-painel-app *,
+#rbs-painel-app *::before,
+#rbs-painel-app *::after {
+    box-sizing: border-box !important;
+    font-family: 'Rubik', sans-serif !important;
+}
+
+/* Layout Principal */
+#rbs-painel-app .main-container {
+    display: grid;
+    grid-template-columns: 1.75fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    gap: 0.94vw;
+    padding: 1.85vh clamp(0.94vw, 3vw, 1.77vw) 1.57vh;
+    flex: 1;
+    max-width: 100vw;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 0;
+}
+
+/* Grid durante chamada ativa (CHAMANDO AGORA) */
+#rbs-painel-app .main-container.is-calling {
+    grid-template-areas:
+        "call calls"
+        "call news";
+    grid-template-columns: minmax(0, 1.7fr) minmax(15.63vw, 1fr);
+    grid-template-rows: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+#rbs-painel-app .bottom-bar {
+    display: none;
+}

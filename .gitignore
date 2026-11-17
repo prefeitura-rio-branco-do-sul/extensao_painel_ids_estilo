@@ -1,0 +1,32 @@
+# Logs e Depuração
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Dependências
+node_modules/
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Arquivos temporários e scratch
+*.tmp
+*.bak
+scratch/
+
+# NOTA DE SEGURANÇA SOBRE A CHAVE PRIVADA (key.pem):
+# O arquivo key.pem é a chave RSA usada para assinar o arquivo .crx e fixar o Extension ID.
+# Se este repositório for tornado público mundialmente no GitHub, considere proteger key.pem
+# e distribuí-lo apenas internamente entre os administradores autorizados.

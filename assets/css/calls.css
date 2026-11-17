@@ -1,0 +1,201 @@
+/* ============================================================= */
+/* Painel de Chamadas, Destaque Chamando Agora e Histórico       */
+/* ============================================================= */
+
+#rbs-painel-app .call-presentation {
+    display: none;
+}
+
+/* Estado ativo de Chamada (CHAMANDO AGORA) */
+#rbs-painel-app .main-container.is-calling .call-presentation {
+    grid-area: call;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(1.25vw, 3.5vw, 2.29vw);
+    border-radius: 0.94vw;
+    background-color: #1d7a38;
+    color: #ffffff;
+    box-shadow: 0 0.93vh 0.78vw -0.16vw rgba(0, 0, 0, 0.1);
+    animation: fadeInCall 0.35s ease-out;
+}
+
+@keyframes fadeInCall {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#rbs-painel-app .calling-status {
+    display: flex;
+    align-items: center;
+    gap: 0.63vw;
+    margin-bottom: 2.59vh;
+    font-size: clamp(0.92vw, 1.8vw, 1.25vw);
+    font-weight: 900;
+    letter-spacing: 0.1vw;
+}
+
+#rbs-painel-app .calling-status::before {
+    width: 0.83vw;
+    height: 0.83vw;
+    flex: 0 0 0.83vw;
+    border-radius: 50%;
+    background-color: #ffd43b;
+    content: "";
+    animation: pulse-calling-dot 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-calling-dot {
+    0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 212, 59, 0.7); }
+    50% { transform: scale(1.3); opacity: 0.8; box-shadow: 0 0 0 0.42vw rgba(255, 212, 59, 0); }
+}
+
+#rbs-painel-app .calling-name {
+    overflow-wrap: anywhere;
+    font-size: clamp(2vw, 5vw, 3.75vw);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.03vw;
+}
+
+#rbs-painel-app .calling-ticket {
+    margin-top: 1.11vh;
+    color: #d7f0dd;
+    font-size: clamp(0.83vw, 1.7vw, 1.08vw);
+    font-weight: 700;
+}
+
+#rbs-painel-app .calling-destination {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0 0.73vw;
+    margin-top: auto;
+    padding: 1.67vh 1.15vw;
+    border-radius: 0.73vw;
+    background-color: #ffffff;
+    color: #142a1e;
+    box-shadow: 0 0.37vh 0.31vw -0.05vw rgba(0, 0, 0, 0.1);
+}
+
+#rbs-painel-app .destination-label {
+    grid-column: 1;
+    color: #40594a;
+    font-size: 0.79vw;
+    font-weight: 800;
+    letter-spacing: 0.05vw;
+}
+
+#rbs-painel-app .calling-location {
+    grid-column: 1;
+    overflow-wrap: anywhere;
+    font-size: clamp(1.42vw, 3.5vw, 2.67vw);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+#rbs-painel-app .destination-arrow {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    color: #1d7a38;
+    font-size: clamp(2.08vw, 5vw, 3.75vw);
+    font-weight: 700;
+    line-height: 1;
+}
+
+#rbs-painel-app .main-container.is-calling .calls-card {
+    grid-area: calls;
+}
+
+#rbs-painel-app .main-container.is-calling .current-call {
+    display: none;
+}
+
+/* Painel de Chamadas (Direita) */
+#rbs-painel-app .calls-card {
+    background-color: #ffffff;
+    border-radius: 0.94vw;
+    padding: 2vh 1vw;
+    box-shadow: 0 0.93vh 0.78vw -0.16vw rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#rbs-painel-app .calls-title {
+    font-size: 1.25vw;
+    font-weight: 800;
+    color: #40594a;
+    letter-spacing: 0.08vw;
+    margin: 0 0.63vw 0.93vh;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#rbs-painel-app .calls-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+#rbs-painel-app .calls-list::-webkit-scrollbar {
+    display: none;
+}
+
+#rbs-painel-app .call-item {
+    padding: 1.39vh 0.63vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.09vh solid #f1f5f9;
+    transition: background-color 300ms ease;
+}
+
+#rbs-painel-app .call-item:last-child {
+    border-bottom: none;
+}
+
+#rbs-painel-app .call-item.active {
+    background-color: #e2f2e7;
+    border-radius: 0.52vw;
+    border-bottom: none;
+    padding: 1.85vh 0.63vw;
+    margin-bottom: 0.56vh;
+}
+
+#rbs-painel-app .patient-name {
+    font-size: 1.35vw;
+    font-weight: 800;
+    color: #142a1e;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#rbs-painel-app .call-item.active .patient-name {
+    color: #142a1e;
+    font-weight: 800;
+    font-size: 1.46vw;
+}
+
+#rbs-painel-app .call-location {
+    font-size: 1.04vw;
+    font-weight: 700;
+    color: #40594a;
+    margin-top: 1.25vh;
+}
+
+#rbs-painel-app .call-item.active .call-location {
+    color: #15803d;
+    font-weight: 800;
+}

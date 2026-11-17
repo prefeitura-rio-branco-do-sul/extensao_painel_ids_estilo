@@ -1,0 +1,29 @@
+name: CI - Verificação e Validação
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do Repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Validar Sintaxe dos Scripts JavaScript
+      run: npm test
+
+    - name: Executar Build
+      run: npm run build
+
+    - name: Testar Empacotamento CRX3
+      run: npm run pack

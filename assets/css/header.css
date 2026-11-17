@@ -1,0 +1,86 @@
+/* ============================================================= */
+/* Cabeçalho Superior, Relógio e Identificação Institucional     */
+/* ============================================================= */
+
+#rbs-painel-app .top-bar {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0.74vh clamp(0.94vw, 3vw, 1.77vw);
+    border-bottom: 0.28vh solid #1c7237;
+    flex-shrink: 0;
+    box-shadow: 0 0.19vh 0.21vw rgba(0, 0, 0, 0.04);
+}
+
+#rbs-painel-app .logo-prefeitura img {
+    width: 6vw;
+    object-fit: contain;
+    display: block;
+}
+
+#rbs-painel-app .unit-title {
+    flex: 1;
+    margin: 0 0.83vw;
+    font-size: 2vw;
+    font-weight: 800;
+    color: #142a1e;
+    text-transform: uppercase;
+    letter-spacing: -0.03vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#rbs-painel-app .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.3vw;
+    flex-shrink: 0;
+}
+
+#rbs-painel-app .date-time {
+    display: flex;
+    align-items: center;
+    gap: 0.78vw;
+}
+
+#rbs-painel-app .date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #4a5568;
+    line-height: 1.25;
+}
+
+#rbs-painel-app .day-of-week {
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #142a1e;
+}
+
+#rbs-painel-app .full-date {
+    font-size: 1.25vw;
+    font-weight: 600;
+}
+
+#rbs-painel-app .clock {
+    font-size: 2.5vw;
+    font-weight: 900;
+    color: #142a1e;
+    line-height: 1;
+    letter-spacing: -0.05vw;
+    min-width: 5.73vw;
+    text-align: right;
+}
+
+#rbs-painel-app .logo-ids {
+    border-left: 0.05vw solid #cbd5e1;
+    padding-left: 1.04vw;
+    display: flex;
+    align-items: center;
+}
+
+#rbs-painel-app .logo-ids img {
+    width: 3.5vw;
+    object-fit: contain;
+    display: block;
+}

@@ -1,0 +1,63 @@
+/* ============================================================= */
+/* Regras de Responsividade (@media queries)                     */
+/* ============================================================= */
+
+@media (max-width: 57.29vw) and (min-width: 41.72vw) {
+    #rbs-painel-app .main-container.is-calling {
+        grid-template-columns: minmax(0, 1.5fr) minmax(15.63vw, 1fr);
+    }
+    #rbs-painel-app .calling-name {
+        font-size: clamp(1.67vw, 4vw, 2.92vw);
+    }
+}
+
+@media (max-width: 57.29vw) {
+    #rbs-painel-app .top-bar {
+        padding-right: 1.04vw;
+        padding-left: 1.04vw;
+    }
+    #rbs-painel-app .unit-title {
+        margin: 0 0.63vw;
+        font-size: clamp(0.83vw, 2vw, 1.13vw);
+    }
+    #rbs-painel-app .main-container {
+        grid-template-columns: minmax(0, 1.5fr) minmax(15.63vw, 1fr);
+        gap: 0.73vw;
+        padding-right: 1.04vw;
+        padding-left: 1.04vw;
+    }
+}
+
+@media (max-width: 41.67vw) {
+    #rbs-painel-app .top-bar {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        min-height: 7.41vh;
+        height: auto;
+        padding: 0.74vh 0.94vw;
+    }
+    #rbs-painel-app .logo-prefeitura img {
+        height: 5.19vh;
+    }
+    #rbs-painel-app .main-container {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        gap: 0.73vw;
+        padding: 1.48vh 0.94vw;
+    }
+    #rbs-painel-app .main-container.is-calling {
+        grid-template-areas:
+            "call"
+            "calls"
+            "news";
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+    #rbs-painel-app .news-card {
+        height: auto;
+        min-height: 0;
+    }
+    #rbs-painel-app .news-image-container {
+        height: clamp(22.22vh, 45vw, 35.19vh);
+    }
+}
